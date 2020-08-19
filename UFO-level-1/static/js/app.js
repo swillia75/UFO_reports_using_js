@@ -9,7 +9,7 @@ var tbody = d3.select("tbody");
 
 
 // loop through data print to console.log
-ufoData.forEach(function(ufoSightings) {
+ufoData.forEach((ufoSightings) => {
     console.log(ufoSightings);
 
     // append rows to table
@@ -33,7 +33,7 @@ ufoData.forEach(function(ufoSightings) {
 var button = d3.select("#filter-btn");
 
 //Select form 
-var form = d3.select("#form");
+var form = d3.select("#filters");
 //create event handlers
 
 button.on("click", runEnter);
@@ -46,24 +46,26 @@ function runEnter(){
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
-   // Select the input element and get the raw HTML node
-   var inputElement = d3.select("#datetime");
+  // Select the input element and get the raw HTML node
+  var inputElement = d3.select("#datetime");
 
-   // Get the value property of the input element
-   var inputValue = inputElement.property("value");
+  // Get the value property of the input element
+  var inputValue = inputElement.property("value");
  
-   console.log(inputValue);
+  console.log(inputValue);
 
+  var filteredData = []
+
+  var unfilteredData = ufoData.filter(UFO => UFO.datetime === inputValue);
+  filteredData.push(unfilteredData);
+
+  console.log(unfilteredData);
 };
    
-var filteredData = []; 
 
-
-var ufofilteredData = ufoData.filter(ufoData => parseInt(ufoData.datetime) === inputValue);
-filteredData.push(ufofilteredData);
    
     
-console.log(filteredData);
+
 
  
 
