@@ -54,12 +54,13 @@ function runEnter(){
  
   console.log(inputValue);
 
-  var filteredData = []
+  var sightingData = []
 
-  var unfilteredData = ufoData.filter(UFO => UFO.datetime === inputValue);
-  filteredData.push(unfilteredData);
+  var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue);
+  sightingData.push(filteredData);
 
-  console.log(unfilteredData);
+  console.log(filteredData);
+  console.log(sightingData);
 };
    
 
