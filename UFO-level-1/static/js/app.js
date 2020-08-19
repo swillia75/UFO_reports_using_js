@@ -9,14 +9,14 @@ var tbody = d3.select("tbody");
 
 
 // loop through data print to console.log
-ufoData.forEach(function(ufoSitings) {
-    console.log(ufoSitings);
+ufoData.forEach(function(ufoSightings) {
+    console.log(ufoSightings);
 
     // append rows to table
      var row = tbody.append("tr");
 
      // loop through objects to get keys and values
-     Object.entries(ufoSitings).forEach(function([key, value]) {
+     Object.entries(ufoSightings).forEach(function([key, value]) {
      console.log(key, value);
     // Append a cell to the row for each value
     // in the weather report object
@@ -30,12 +30,10 @@ ufoData.forEach(function(ufoSitings) {
 //Listening for events and filter to search data by date
 
 //Select button
-var button = d3.select("#button")
+var button = d3.select("#filter-btn");
 
-//Select form group
-
-var form = d3.select("#form-group")
-
+//Select form 
+var form = d3.select("#form");
 //create event handlers
 
 button.on("click", runEnter);
@@ -49,16 +47,43 @@ function runEnter(){
   d3.event.preventDefault();
 
    // Select the input element and get the raw HTML node
-   var inputElement = d3.select("#form_control");
+   var inputElement = d3.select("#datetime");
 
    // Get the value property of the input element
    var inputValue = inputElement.property("value");
  
    console.log(inputValue);
-   console.log(ufoData);
- 
-   var ufofilteredData = ufoData.filter(ufoData => ufoData.date === inputValue);
- 
-   console.log(ufofilteredData);
 
 };
+   
+var filteredData = []; 
+
+
+var ufofilteredData = ufoData.filter(ufoData => parseInt(ufoData.datetime) === inputValue);
+filteredData.push(ufofilteredData);
+   
+    
+console.log(filteredData);
+
+ 
+
+
+
+
+// ufofilteredData.forEach(function(ufoSitings) {
+//   console.log(ufoSitings);
+
+//   append rows to table
+//    var row = tbody.append("tr");
+
+//    loop through objects to get keys and values
+//    Object.entries(ufoSitings).forEach(function([key, value]) {
+//    console.log(key, value);
+//   Append a cell to the row for each value
+//   in the weather report object
+//     var cell = row.append("td");
+
+//     add values to cells
+//     cell.text(value);
+//    });
+// });
