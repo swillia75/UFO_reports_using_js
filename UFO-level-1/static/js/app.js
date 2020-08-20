@@ -55,27 +55,30 @@ function runEnter(){
  
   console.log(inputValue);
 
-  var sightingData = []
+  
 
   var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue);
-  sightingData.push(filteredData);
+  
 
   console.log(filteredData);
-  console.log(sightingData);
+  
+
   var tbody = d3.select("tbody");
 
   tbody.html("");
  
-  sightingData.forEach((sightings) => {
-      console.log(sightings);
+  filteredData.forEach((sighting) => {
+      console.log(sighting);
     
     // append rows to table
+      
       var row = tbody.append("tr");
-
      // loop through objects to get keys and values
-      Object.entries(sightings).forEach(function([key, value]) {
+      Object.entries(sighting).forEach(([key, value]) => {
         console.log(key, value);
         // Append a cell to the row for each value
+        
+        
         var cell = row.append("td");
 
         // add values to cells
