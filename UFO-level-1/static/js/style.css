@@ -1,11 +1,33 @@
 h1{
-    color: black;
-}
-
-table, th, td {
-    border: 10 px green;
-}
-
-.button{
-    background: red;
-}
+    color: black;  
+  }
+  
+  .jumbotron{
+      background-color:maroon;
+  }
+  
+  .btn{
+      background-color: cyan;
+      color: darkblue;
+  }
+  
+  table{
+      border-style: solid;
+  }
+  
+  .container{
+      background-color: orange;
+  }
+  
+  ul {
+      display: inline-block
+  }
+  
+  tr:nth-child(even){
+      background-color: palegreen;
+      color: black
+  }
+  
+  tr:nth-child(odd){
+      background-color: plum;
+      color:  black

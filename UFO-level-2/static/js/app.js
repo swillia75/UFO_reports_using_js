@@ -47,11 +47,13 @@ function runEnter(){
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
-  var inputElement = d3.select("#input")
+  var inputElement = d3.select("#input");
 
   // Select the input element and get the raw HTML node
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
+
+  
  
   
   var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue || 
@@ -61,7 +63,7 @@ function runEnter(){
                                       UFO.shape === inputValue);
 
   
-  // var tbody = d3.select("tbody");
+  var tbody = d3.select("tbody");
   
 
   tbody.html("");
