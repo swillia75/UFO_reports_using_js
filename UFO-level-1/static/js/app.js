@@ -43,6 +43,7 @@ form.on("submit", runEnter);
 
 function runEnter(){
 
+ 
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
@@ -61,6 +62,26 @@ function runEnter(){
 
   console.log(filteredData);
   console.log(sightingData);
+  var tbody = d3.select("tbody");
+
+  tbody.html("");
+ 
+  sightingData.forEach((sightings) => {
+      console.log(sightings);
+    
+    // append rows to table
+      var row = tbody.append("tr");
+
+     // loop through objects to get keys and values
+      Object.entries(sightings).forEach(function([key, value]) {
+        console.log(key, value);
+        // Append a cell to the row for each value
+        var cell = row.append("td");
+
+        // add values to cells
+        cell.text(value);
+      });
+  });
 };
    
 
@@ -73,20 +94,3 @@ function runEnter(){
 
 
 
-// ufofilteredData.forEach(function(ufoSitings) {
-//   console.log(ufoSitings);
-
-//   append rows to table
-//    var row = tbody.append("tr");
-
-//    loop through objects to get keys and values
-//    Object.entries(ufoSitings).forEach(function([key, value]) {
-//    console.log(key, value);
-//   Append a cell to the row for each value
-//   in the weather report object
-//     var cell = row.append("td");
-
-//     add values to cells
-//     cell.text(value);
-//    });
-// });
