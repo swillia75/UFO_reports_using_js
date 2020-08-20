@@ -57,7 +57,7 @@ function runEnter(){
  
   
   var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue || 
-                                      UFO.city === inputValue ||
+                                      UFO.city === inputValue  ||
                                       UFO.state === inputValue ||
                                       UFO.country === inputValue ||
                                       UFO.shape === inputValue);
