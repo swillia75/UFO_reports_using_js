@@ -47,23 +47,22 @@ function runEnter(){
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
-  // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#datetime");
+  var inputElement = d3.select("#input")
 
+  // Select the input element and get the raw HTML node
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
  
-  console.log(inputValue);
+  
+  var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue || 
+                                      UFO.city === inputValue ||
+                                      UFO.state === inputValue ||
+                                      UFO.country === inputValue ||
+                                      UFO.shape === inputValue);
 
   
-
-  var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue);
+  // var tbody = d3.select("tbody");
   
-
-  console.log(filteredData);
-  
-
-  var tbody = d3.select("tbody");
 
   tbody.html("");
  
