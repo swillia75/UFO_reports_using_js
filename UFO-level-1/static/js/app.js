@@ -55,17 +55,19 @@ function runEnter(){
  
   console.log(inputValue);
 
-  
+  //filter table based on datetime input
 
   var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue);
   
 
   console.log(filteredData);
   
-
+  // Select table body and clear the table to append rows that meet input
   var tbody = d3.select("tbody");
 
   tbody.html("");
+
+  //Loop through filteredData to get objects
  
   filteredData.forEach((sighting) => {
       console.log(sighting);
@@ -73,11 +75,13 @@ function runEnter(){
     // append rows to table
       
       var row = tbody.append("tr");
+
      // loop through objects to get keys and values
+
       Object.entries(sighting).forEach(([key, value]) => {
         console.log(key, value);
+
         // Append a cell to the row for each value
-        
         
         var cell = row.append("td");
 

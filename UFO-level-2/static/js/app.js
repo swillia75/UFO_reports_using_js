@@ -55,7 +55,7 @@ function runEnter(){
 
   
  
-  
+  // filter data based on input compared to all columns
   var filteredData = ufoData.filter(UFO => UFO.datetime === inputValue || 
                                       UFO.city === inputValue  ||
                                       UFO.state === inputValue ||
@@ -65,21 +65,23 @@ function runEnter(){
   
   var tbody = d3.select("tbody");
   
-
+  // clear the table body before adding rows that meet search query
   tbody.html("");
- 
+
+ //Loop through data to get objects
   filteredData.forEach((sighting) => {
       console.log(sighting);
     
     // append rows to table
       
       var row = tbody.append("tr");
+
      // loop through objects to get keys and values
       Object.entries(sighting).forEach(([key, value]) => {
         console.log(key, value);
+
         // Append a cell to the row for each value
-        
-        
+               
         var cell = row.append("td");
 
         // add values to cells
