@@ -1,17 +1,40 @@
 # javascript_challenge
 
-We need you to write code that will create a table dynamically based upon a dataset we provide. We also need to allow our users to filter the table data for specific values. There's a catch though... we only use pure JavaScript, HTML, and CSS, and D3.js on our web pages. They are the only coding languages which can be trusted.
+![](images/UFO.png)
 
-Level 1: Automatic Table and Date Search (Required)
+Project Description
 
+The task was to create a HTML webpage to create a dynamic table for UFO sitings using Javascript and D3. The table was set up to allow filtering using specific values. 
+This will make it easier to find reports for the viewers.
 
-Create a basic HTML web page or use the index.html file provided (we recommend building your own custom page!).
+Tools Required
 
+Javascript, 
+HTML, 
+CSS, 
+D3.js
 
-Using the UFO dataset provided in the form of an array of JavaScript objects, write code that appends a table to your web page and then adds new rows of data for each UFO sighting.
+Instructions
 
-Make sure you have a column for date/time, city, state, country, shape, and comment at the very least.
+• Create a basic html to read js file 
+• Create variables for data and to reference table body 
+• Loop through data to create rows for table and add values too cells 
+• Add listening event (button click) for filtering rows • Loop through data to get filtered rows 
+• Modify listening event to use multiple values.
 
+Files
 
+app.js – provides all code to create table with data on html and the listening event to 
+filter through the data
 
-Use a date form in your HTML document and write JavaScript code that will listen for events and search through the date/time column to find rows that match user input.
+data – contains ufo data use for the rows
+css.js – contains code to style webpage
+index.html – contains code to display webpage and app.js
+
+Results
+Unfiltered
+![](images/unfiltered.png)
+Filtered
+![](images/Filtered.png)
+
+A webpage was created that displayed the provided ufo data in a table using javascript and D3.js. A listening event was included to filter the data on one value, the date. Advanced work is still in progress to create a listening event to filter on multiple values.
